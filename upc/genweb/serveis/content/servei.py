@@ -98,6 +98,18 @@ class Servei(OrderedBaseFolder, ATFolder, ATDocument):
             new_list.append(f.Title)
         return new_list
 
+    def enlace(self):        
+        obj=[]
+        lista=[]
+        lista = self.getListaservei1()
+        portal_catalog = getToolByName(self, 'portal_catalog')
+        mt = portal_catalog.searchResults(portal_type = 'Servei')       
+        for i in lista:
+            for j in mt:
+                if i==j.Title:
+                    obj.append(j)
+        return obj
+    
 registerType(Servei, PROJECTNAME)
 
 

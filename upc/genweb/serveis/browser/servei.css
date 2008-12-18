@@ -1,6 +1,6 @@
 .serveiFirstHeading{
 	font-size: 1.3em;
-	color: &dtml-especific3;; /* #996600; /* Específic 3 */
+	color: #F38C01; /*  /* Específic 3 */
 	border: 0px;
 	margin: 0px 0px 5px 0px;
 /*	border-bottom: 1px dotted; */
@@ -25,7 +25,7 @@
 #separador_n3{ 
 	margin: 0px 0px 5px 0px; 
 	border-bottom: 1px dotted; 
-	color: &dtml-especific3;;
+	color: #F38C01; /*  /* Específic 3 */
 	margin-top:-15px;
 	margin-bottom: 5px;
 }
@@ -166,9 +166,8 @@
 }
 .responsable_inf{
 	font-size: 11px;
-	color: &dtml-especific3;; /* #996600; /* Específic 3 */
+	color: #F38C01;; /* #996600; /* Específic 3 */
 	text-align: right;
-	margin-right: -17pt;
 }
 
 

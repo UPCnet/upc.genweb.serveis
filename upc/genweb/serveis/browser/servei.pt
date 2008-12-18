@@ -12,7 +12,9 @@
 
 <metal:main fill-slot="main">
     <tal:main-macro metal:define-macro="main"
-           tal:define="text python: here.CookedBody(stx_level=2);">
+           tal:define="text python: here.CookedBody(stx_level=2);
+           			   pURL python:context.portal_url();
+           			   servs python:here.enlace()">
 
         <div metal:use-macro="here/document_actions/macros/document_actions">
             Document actions (print, sendto etc)
@@ -22,10 +24,123 @@
 		        <span tal:content="here/pretty_title_or_id">
 		          Title or id
 		        </span>
-				<a tal:condition="here/getContratomarco" tal:attributes="href string:${portal_url}/serveis/contracte-marc">
-				<img title="Servei inclòs en el contracte marc UPC-UPCNet" src="contracte_marc.jpg" class="imagen_titulo_cm"/></a>	
+				<a tal:condition="here/getContratomarco" tal:attributes="href string:${pURL}/serveis/contracte-marc">
+				<img title="Servei inclòs en el contracte marc UPC-UPCNet" src="++resource++contracte_marc.jpg" class="imagen_titulo_cm"/></a>	
 		</div>
 
+        <p class="documentDescription"
+           tal:content="here/Description"
+           tal:condition="here/Description">
+            Description
+        </p>
+        
+       <div id="separador_n3">&nbsp;</div>
+
+        <p tal:condition="python: not text and is_editable"
+           i18n:translate="no_body_text"
+           class="discreet">
+            This item does not have any body text, click the edit tab to change it.
+        </p>
+    
+        <div class="stx"
+             tal:condition="text"
+             tal:attributes="class python: view.test(here.Format() in ('text/structured',
+                                                   'text/x-rst', ), 'stx', 'plain')">
+            <div tal:replace="structure text" />
+        </div>
+
+        <div class="visualClear"><!-----></div>       
+        
+        <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+            show related items if they exista
+        </div>    
+
+       <div id="separador_n3">&nbsp;</div>
+   	 	 	
+<!-- <A name="faqs"><H1></H1></A>-->
+<!-- -->
+<!--	<div class="notificaciones" tal:condition="faqs">-->
+<!--		<div class="titolfaq">-->
+<!--					  <span>FAQ</span>-->
+<!--		</div>-->
+<!--					<div class="titol-bottom">				    		  -->
+<!--				    	    <tal:block tal:repeat="obj faqs">-->
+<!--								<div class="llista">-->
+<!--						  			<a href="#"-->
+<!--						  				tal:attributes="href obj/getURL;-->
+<!--						                  	            title obj/Description">-->
+<!--						            	<span tal:replace="obj/pretty_title_or_id">-->
+<!--						             	-->
+<!--						            	</span>-->
+<!--						   			</a>          -->
+<!--							   </div>-->
+<!--						    </tal:block>-->
+<!--					</div>-->
+<!--			 Enlace a la visualizacion de la carpeta FAQ -->
+<!--			<br><a tal:attributes="href string:${portal_url}/faq">Veure les FAQ de tots els serveis</a>-->
+<!--	</div>-->
+
+
+
+	
+   	 <!-- Notificaciones -->
+   	
+<!--   	<A name="notificaciones"><H1></H1></A>-->
+<!---->
+<!--	<div class="notificaciones" tal:condition="nots">-->
+<!--		<div class="titolfaq">-->
+<!--					  <span>Notificacions</span>-->
+<!--		</div>-->
+<!--					<div class="titol-bottom">					-->
+<!--				    	   <tal:block tal:repeat="obj nots">							-->
+<!--								<div class="llista">-->
+<!--						  			<a href="#"-->
+<!--						  				tal:attributes="href obj/getURL;-->
+<!--						                  	            title obj/Description">-->
+<!--						                <span>[</span>-->
+<!--						                <span><tal:block define="t obj/getFechaincidencia;-->
+<!--                           					var python:str(t).split(' ',1)"-->
+<!--                           					content="python:var[0]"/>    </span>-->
+<!--						                <span>]</span>-->
+<!--						            	<span tal:replace="obj/pretty_title_or_id"></span>						             						            	-->
+<!--						   			</a>      -->
+<!--							    </div>-->
+<!--						    </tal:block>						-->
+<!--					</div>-->
+<!--			 Enlace a la visualizacion de la carpeta notificacions -->
+<!--			<br><a tal:attributes="href string:${portal_url}/notificacions">Veure les notificacions de tots els serveis</a>-->
+<!--	 </div>-->
+
+	
+	
+		<A name="servicios_rel"><H1></H1></A>
+		
+		<div class="notificaciones" tal:condition="servs">  
+			<div class="titolfaq">
+					  <span>Serveis relacionats</span>
+			</div>
+			
+			
+           		<tal:block tal:repeat="obj servs">
+						<div class="llista">  	
+						  	<a href="#"
+								tal:attributes="href obj/getURL;">
+				            	<span tal:replace="obj/pretty_title_or_id"></span>
+						   	</a>
+						</div>
+             	</tal:block>	
+
+        </div>
+       	
+       	<br>
+       	
+       	
+       	<div class="responsable_inf">
+        	<span>Responsable de la Informació: </span>
+            <tal:block define="t here/Creator;" content="python:t"/>
+        </div>
+        
+        
     </tal:main-macro>
 </metal:main>
 
