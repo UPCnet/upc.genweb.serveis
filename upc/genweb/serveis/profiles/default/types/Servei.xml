@@ -5,7 +5,7 @@
    
  <property name="title">Servei</property>
  <property name="description"></property>
- <property name="content_icon">servei.gif</property>
+ <property name="content_icon">++resource++Ico_Servei.png</property>
  <property name="content_meta_type">Servei</property>
  <property name="product">upc.genweb.serveis</property>
  <property name="factory">addServei</property>
@@ -15,9 +15,9 @@
  <property name="allowed_content_types">
  </property>
  <property name="allow_discussion">False</property>
- <property name="default_view">base_view</property>
+ <property name="default_view">view</property>
  <property name="view_methods">
-  <element value="base_view"/>
+  <element value="view"/>
  </property>
  <property name="default_view_fallback">False</property>
  <alias from="(Default)" to="(dynamic view)"/>

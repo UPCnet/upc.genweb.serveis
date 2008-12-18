@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<body>
+
+<metal:css fill-slot="css_slot">
+    <style type="text/css" media="all"
+            tal:content="string: @import url(${context/++resource++servei.css});"></style>
+</metal:css>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+           tal:define="text python: here.CookedBody(stx_level=2);">
+
+        <div metal:use-macro="here/document_actions/macros/document_actions">
+            Document actions (print, sendto etc)
+        </div>
+
+		<div class="serveiFirstHeading">
+		        <span tal:content="here/pretty_title_or_id">
+		          Title or id
+		        </span>
+				<a tal:condition="here/getContratomarco" tal:attributes="href string:${portal_url}/serveis/contracte-marc">
+				<img title="Servei inclòs en el contracte marc UPC-UPCNet" src="contracte_marc.jpg" class="imagen_titulo_cm"/></a>	
+		</div>
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>

@@ -5,6 +5,44 @@
 
     <include package="plone.app.contentmenu" />
 
-    <!-- -*- extra stuff goes here -*- -->
+    <browser:resource
+        name="Ico_Servei.png"
+        image="Ico_Servei.png"
+        />
 
+    <browser:resource
+        name="Ico_Notificacio.png"
+        image="Ico_Notificacio.png"
+        />
+
+    <browser:resource
+        name="Ico_FAQ.png"
+        image="Ico_FAQ.png"
+        />
+
+    <browser:resource
+        name="contracte_marc.jpg"
+        image="contracte_marc.jpg"
+        />
+               
+    <browser:resource
+        name="servei.css"
+        file="servei.css"
+        />
+
+    <browser:page
+        for="..interfaces.IServei"
+        name="view"
+        class=".servei.ServeiView"
+        permission="zope2.View"
+        />
+
+    <browser:menuItem
+        for="..interfaces.IServei"
+        menu="plone_displayviews"
+        title="Servei view"
+        action="@@view"
+        description="Default representation of Servei."
+        />
+     
 </configure>

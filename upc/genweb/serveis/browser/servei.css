@@ -1,0 +1,178 @@
+.serveiFirstHeading{
+	font-size: 1.3em;
+	color: &dtml-especific3;; /* #996600; /* Específic 3 */
+	border: 0px;
+	margin: 0px 0px 5px 0px;
+/*	border-bottom: 1px dotted; */
+	font-weight: bold;
+	height: 30px;
+}
+
+.imagen_titulo_cm {
+ 	position:relative;
+ 	bottom: 5px; }
+
+.llista{
+  font-size: 11px; 
+  border: none;
+  background: url(quadretGris.gif) no-repeat top left;
+  padding: 0px 0px 0px 15px;
+  margin-top: 7px;
+  line-height: 1.2em;
+  list-style: none; list-style-type: none;list-style-image: none;
+}
+
+#separador_n3{ 
+	margin: 0px 0px 5px 0px; 
+	border-bottom: 1px dotted; 
+	color: &dtml-especific3;;
+	margin-top:-15px;
+	margin-bottom: 5px;
+}
+
+.imagen_servei{
+	clear:both;
+	float:right;
+	margin-top: 18px;
+	margin-left: 5px;
+	text-align: right;
+}
+
+.enlaces {
+ margin: 0px 0px 0px 0px;
+}
+
+.documentContent .enlaces ul{
+  margin: 0px;
+}
+
+.enlaces ul{
+	float: left;
+	color: #0075CC;
+	margin: 0px 0px 0px 0px;
+	line-height: 1.7em;
+	margin: 0px;
+/*	margin-left: 0;*/
+/*	padding: 0;
+	margin: 0;*/
+}
+.enlaces ul li{
+	clear:both;
+	display: inline;
+	margin-top: 10px;
+	color: #0075CC;
+/*	padding: 0;
+	margin: 0;*/
+}
+
+.imagesPreviewBox {
+	border: thick;
+	margin: 0 0 1em 1em;
+	padding: 0;
+	overflow: none;
+	float: right;
+}
+
+.link{
+	font-size:large;
+	color:black;
+	text-decoration: underline;
+}
+
+.li{
+	color:black;
+	text-decoration: underline;
+}
+.issue-quick-search-box {
+    width: 30%; 
+    float: left; 
+    padding: 0 1em 1em 0;
+}
+
+.imagesPreviewBoxHeader  {	
+	background: &dtml-globalBackgroundColor;;
+	color: &dtml-globalFontColor;;
+	border: &dtml-borderWidth; &dtml-borderStyle; &dtml-globalBorderColor;;
+	border-bottom: none;
+	padding: 0 1em;
+	margin: 0;
+	text-transform: &dtml-textTransform;;
+	font-size: 90%;
+	display: block;
+	font-weight: normal;
+	white-space: nowrap;
+	position: relative;
+}
+
+.imagesPreviewBoxBody {
+	padding: 2px 1px 1px 2px;
+	margin: 0;
+	border: 1px &dtml-borderStyle; &dtml-globalBorderColor;;
+	border-collapse: collapse;
+	font-size: 90%;
+	color: &dtml-fontColor;;
+	text-align: center;
+	overflow: none;
+	position: relative;
+}
+
+.imagesPreviewBoxImage {
+	margin-bottom: 1px;
+	text-align: center;
+}
+
+.bottomDivider {
+	border-bottom: 1px &dtml-borderStyle; &dtml-globalBorderColor;;
+	position: relative;
+	margin-bottom: 1em;
+}
+
+.topDivider {
+	border-top: 1px &dtml-borderStyle; &dtml-globalBorderColor;;
+	position: relative;
+}
+
+/* Floating preview */
+
+.imageFloat {
+    text-align: center;
+    float: left;
+	margin: 0 5px 5px 5px;
+}
+
+.imageFloat .caption {
+    color: &dtml-discreetColor;;
+    text-align: left;
+    font-size: &dtml-fontSmallSize;;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.notificaciones{
+	color: #000000;
+}
+
+.caja_contenido{
+	color: #000000;
+}
+
+.titolfaq{
+	color: #92070C;
+	font-size: 10pt;
+}
+
+.caja_nueva{
+	font-size: 11px;
+}
+.responsable_inf{
+	font-size: 11px;
+	color: &dtml-especific3;; /* #996600; /* Específic 3 */
+	text-align: right;
+	margin-right: -17pt;
+}
+
+
+
+
+
+
