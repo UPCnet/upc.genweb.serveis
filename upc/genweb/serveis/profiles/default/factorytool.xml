@@ -15,4 +15,9 @@
   <factorytypes>
     <type portal_type="Notificacions"/>
   </factorytypes>
+
+  <factorytypes>
+    <type portal_type="Carpeta"/>
+  </factorytypes>
+  
 </object>
