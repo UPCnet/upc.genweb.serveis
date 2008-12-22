@@ -18,9 +18,9 @@
         
         <div class="separadorH2">&nbsp;</div>
 
-        <div metal:use-macro="here/document_byline/macros/byline">
-          Get the byline - contains details about author and modification date.
-        </div>
+<!--        <div metal:use-macro="here/document_byline/macros/byline">-->
+<!--          Get the byline - contains details about author and modification date.-->
+<!--        </div>-->
 
 			<tal:block tal:repeat="obj python:here.muestranotif()">
 				<div style="font-size: 11px; border: none; background: url(quadretGris.gif) no-repeat top left;
