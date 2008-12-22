@@ -59,4 +59,20 @@
         action="@@view"
         description="Default representation of Notificacions."
         />     
+
+    <browser:page
+        for="..interfaces.ICarpeta"
+        name="view"
+        class=".carpeta.CarpetaView"
+        permission="zope2.View"
+        />
+
+    <browser:menuItem
+        for="..interfaces.ICarpeta"
+        menu="plone_displayviews"
+        title="Carpeta Notificacions view"
+        action="@@view"
+        description="Default representation of Carpeta Notificacions."
+        />    
+        
 </configure>

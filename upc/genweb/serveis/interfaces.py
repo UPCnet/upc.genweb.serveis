@@ -13,3 +13,7 @@ class IServei(Interface):
 class INotificacions(Interface):  
     """
     """
+    
+class ICarpeta(Interface):  
+    """
+    """    

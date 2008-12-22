@@ -25,6 +25,17 @@
             />
     </class>
 
+    <class class=".carpeta.Carpeta">
+        <require
+            permission="zope2.View"
+            interface="..interfaces.ICarpeta"
+            />
+        <require
+            permission="cmf.ModifyPortalContent"
+            set_schema="..interfaces.ICarpeta"
+            />
+    </class>
+    
 </configure>
 
 
