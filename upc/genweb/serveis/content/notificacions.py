@@ -12,7 +12,7 @@ from Products.Archetypes.interfaces import IObjectPostValidation
 from Products.Archetypes.atapi import *
 from AccessControl import ClassSecurityInfo
 
-
+from DateTime import DateTime
 from Products.Archetypes.public import DisplayList
 from Products.Archetypes.public import *
 
@@ -72,7 +72,6 @@ class Notificacions(ATDocument):
 
     schema = incidSchema
 
-    security.declareProtected(View, 'listaServicios')
     def listaServicios(self):
         """Return a list of metadata fields from portal_catalog.
         """    

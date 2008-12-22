@@ -1,1 +1,90 @@
-hola
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+           tal:define="text python: here.CookedBody(stx_level=2)">
+
+        <div metal:use-macro="here/document_actions/macros/document_actions">
+            Document actions (print, sendto etc)
+        </div>
+
+        <h1 tal:content="here/pretty_title_or_id" class="documentFirstHeading">
+          Title or id
+        </h1>
+        
+        <div class="separadorH2">&nbsp;</div>
+
+        <div metal:use-macro="here/document_byline/macros/byline">
+          Get the byline - contains details about author and modification date.
+        </div>
+		<!-- Descripcion oculta -->
+        <p class="documentDescription"
+           tal:content="here/Description"
+           tal:condition="here/Description">
+            Description
+        </p>
+        
+       <!-- Enlaces en la parte superior derecha del content type -->
+       <div align="right">      
+          	  <a href="#servicios_rel">Serveis Relacionats</a> 
+      	</div>
+        
+
+        <p tal:condition="python: not text and is_editable"
+           i18n:translate="no_body_text"
+           class="discreet">
+            This item does not have any body text, click the edit tab to change it.
+        </p>
+    
+        <div class="stx"
+             tal:condition="text"
+             tal:attributes="class python: here.Format() in ('text/structured', 'text/x-rst', ) and 'stx' or 'plain'">
+            <div tal:replace="structure text" />
+        </div>
+        
+        <!--  <div class="fecha_incidencias">
+        	<span>Fecha Notificació: </span>
+             <tal:block define="t here/getFechaincidencia;
+                           var python:str(t).split(' ',1)"
+                           content="python:var[0]"/>     
+        </div>-->
+        
+
+                    
+        <div class="visualClear"><!-----></div>       
+        
+        <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+            show related items if they exist
+        </div>       
+             
+	<div class="separadorH2">&nbsp;</div>
+
+    		<A name="servicios_rel"><H1></H1></A>
+		
+		<div class="notificaciones">       
+			<div style="color: #92070C; font-size: 10pt">
+					  <span>Serveis relacionats</span>
+			</div>
+			
+			
+           		<tal:block tal:repeat="obj python:here.enlace()">
+						<div class="item">  	
+						  	<a href="#"
+								tal:attributes="href obj/getURL;">
+				            	<span tal:replace="obj/pretty_title_or_id"></span>
+						   	</a>
+						</div>
+             	</tal:block>	
+
+        </div>
+             
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>
+

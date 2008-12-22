@@ -48,7 +48,7 @@
     <browser:page
         for="..interfaces.INotificacions"
         name="view"
-        class=".notificaciones.NotificacionsView"
+        class=".notificacions.NotificacionsView"
         permission="zope2.View"
         />
 
