@@ -7,4 +7,5 @@ ADD_PERMISSIONS = {
     'Servei': 'Servei: Add Servei',
     'Notificacions' : 'Notificacions: Add Notificacions',
     'Carpeta' : 'Carpeta: Add Carpeta',    
+    'ServeiFaq' : 'ServeiFaq: Add ServeiFaq', 
 }

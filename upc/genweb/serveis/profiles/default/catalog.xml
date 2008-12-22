@@ -32,7 +32,10 @@
  </index>
  <column value="getFechaincidencia"/>
  
-
+ <index name="getListaservei2" meta_type="FieldIndex">
+  <indexed_attr value="getListaservei2"/>
+ </index>
+ <column value="getListaservei2"/>
 
 
 </object>

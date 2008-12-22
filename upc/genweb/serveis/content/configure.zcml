@@ -35,7 +35,17 @@
             set_schema="..interfaces.ICarpeta"
             />
     </class>
-    
+
+     <class class=".serveiFaq.ServeiFaq">
+        <require
+            permission="zope2.View"
+            interface="..interfaces.IServeiFaq"
+            />
+        <require
+            permission="cmf.ModifyPortalContent"
+            set_schema="..interfaces.IServeiFaq"
+            />
+    </class>   
 </configure>
 
 

@@ -74,5 +74,20 @@
         action="@@view"
         description="Default representation of Carpeta Notificacions."
         />    
+
+    <browser:page
+        for="..interfaces.IServeiFaq"
+        name="view"
+        class=".serveiFaq.ServeiFaqView"
+        permission="zope2.View"
+        />
+
+    <browser:menuItem
+        for="..interfaces.IServeiFaq"
+        menu="plone_displayviews"
+        title="ServeiFaq view"
+        action="@@view"
+        description="Default representation of ServeiFaq."
+        /> 
         
 </configure>
