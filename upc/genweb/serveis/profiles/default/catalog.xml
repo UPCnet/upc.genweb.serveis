@@ -22,4 +22,17 @@
  </index>
  <column value="getContratomarco"/>
 
+ <index name="getListaservei3" meta_type="FieldIndex">
+  <indexed_attr value="getListaservei3"/>
+ </index>
+ <column value="getListaservei3"/>
+
+ <index name="getFechaincidencia" meta_type="DateIndex">
+  <indexed_attr value="getFechaincidencia"/>
+ </index>
+ <column value="getFechaincidencia"/>
+ 
+
+
+
 </object>

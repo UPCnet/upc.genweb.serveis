@@ -14,6 +14,17 @@
             />
     </class>
 
+    <class class=".notificacions.Notificacions">
+        <require
+            permission="zope2.View"
+            interface="..interfaces.INotificacions"
+            />
+        <require
+            permission="cmf.ModifyPortalContent"
+            set_schema="..interfaces.INotificacions"
+            />
+    </class>
+
 </configure>
 
 
