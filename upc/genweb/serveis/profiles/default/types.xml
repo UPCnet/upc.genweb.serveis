@@ -10,5 +10,6 @@
 
  <object name="Servei"
          meta_type="Factory-based Type Information with dynamic views"/>
-
+ <object name="Notificacions"
+         meta_type="Factory-based Type Information with dynamic views"/>
 </object>

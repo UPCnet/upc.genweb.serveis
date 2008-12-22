@@ -44,5 +44,19 @@
         action="@@view"
         description="Default representation of Servei."
         />
-     
+
+    <browser:page
+        for="..interfaces.INotificacions"
+        name="view"
+        class=".notificaciones.NotificacionsView"
+        permission="zope2.View"
+        />
+
+    <browser:menuItem
+        for="..interfaces.INotificacions"
+        menu="plone_displayviews"
+        title="Notificacions view"
+        action="@@view"
+        description="Default representation of Notificacions."
+        />     
 </configure>

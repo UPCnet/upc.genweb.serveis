@@ -11,4 +11,8 @@
   <factorytypes>
     <type portal_type="Servei"/>
   </factorytypes>
+
+  <factorytypes>
+    <type portal_type="Notificacions"/>
+  </factorytypes>
 </object>
