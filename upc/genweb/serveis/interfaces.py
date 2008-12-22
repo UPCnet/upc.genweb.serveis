@@ -16,4 +16,8 @@ class INotificacions(Interface):
     
 class ICarpeta(Interface):  
     """
+    """  
+
+class IServeiFaq(Interface):  
+    """
     """    

@@ -42,8 +42,7 @@
     
         <div class="stx"
              tal:condition="text"
-             tal:attributes="class python:test(here.Format() in ('text/structured',
-                                                   'text/x-rst', ), 'stx', 'plain')">
+             tal:attributes="class python: here.Format() in ('text/structured','text/x-rst', ) and 'stx' or 'plain'">
             <div tal:replace="structure text" />
         </div>
 
