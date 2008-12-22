@@ -2,7 +2,7 @@
 <object name="ServeiFaq"
    meta_type="Factory-based Type Information with dynamic views"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
- <property name="title">ServeiFaq</property>
+ <property name="title">Servei FAQ</property>
  <property name="description">ServeiFaq</property>
  <property name="content_icon">++resource++Ico_FAQ.png</property>
  <property name="content_meta_type">ServeiFaq</property>

@@ -38,7 +38,7 @@ class Carpetafaq(OrderedBaseFolder, ATFolder, ATDocument):
     meta_type = 'Carpetafaq'
     _at_rename_after_creation = True
 
-    schema = ServeiSchema
+    schema = Carpetaschf
 
     def muestra_serv(self):
         portal_catalog = getToolByName(self, 'portal_catalog')

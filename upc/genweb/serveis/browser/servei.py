@@ -16,4 +16,4 @@ class ServeiView(BrowserView):
     # of this class. The variable 'context' will refer to the cinema folder
     # being rendered.
 
-    __call__ = ViewPageTemplateFile('servei.pt')
+    __call__ = ViewPageTemplateFile('servei_view.pt')

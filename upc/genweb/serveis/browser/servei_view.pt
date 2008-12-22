@@ -57,59 +57,59 @@
 
        <div id="separador_n3">&nbsp;</div>
    	 	 	
-<!-- <A name="faqs"><H1></H1></A>-->
-<!-- -->
-<!--	<div class="notificaciones" tal:condition="faqs">-->
-<!--		<div class="titolfaq">-->
-<!--					  <span>FAQ</span>-->
-<!--		</div>-->
-<!--					<div class="titol-bottom">				    		  -->
-<!--				    	    <tal:block tal:repeat="obj faqs">-->
-<!--								<div class="llista">-->
-<!--						  			<a href="#"-->
-<!--						  				tal:attributes="href obj/getURL;-->
-<!--						                  	            title obj/Description">-->
-<!--						            	<span tal:replace="obj/pretty_title_or_id">-->
-<!--						             	-->
-<!--						            	</span>-->
-<!--						   			</a>          -->
-<!--							   </div>-->
-<!--						    </tal:block>-->
-<!--					</div>-->
+ <A name="faqs"><H1></H1></A>
+ 
+	<div class="notificaciones" tal:condition="faqs">
+		<div class="titolfaq">
+					  <span>FAQ</span>
+		</div>
+					<div class="titol-bottom">				    		  
+				    	    <tal:block tal:repeat="obj faqs">
+								<div class="llista">
+						  			<a href="#"
+						  				tal:attributes="href obj/getURL;
+						                  	            title obj/Description">
+						            	<span tal:replace="obj/pretty_title_or_id">
+						             	
+						            	</span>
+						   			</a>          
+							   </div>
+						    </tal:block>
+					</div>
 <!--			 Enlace a la visualizacion de la carpeta FAQ -->
-<!--			<br><a tal:attributes="href string:${portal_url}/faq">Veure les FAQ de tots els serveis</a>-->
-<!--	</div>-->
+			<br><a tal:attributes="href string:${portal_url}/faq">Veure les FAQ de tots els serveis</a>
+	</div>
 
 
 
 	
-   	 <!-- Notificaciones -->
-   	
-<!--   	<A name="notificaciones"><H1></H1></A>-->
-<!---->
-<!--	<div class="notificaciones" tal:condition="nots">-->
-<!--		<div class="titolfaq">-->
-<!--					  <span>Notificacions</span>-->
-<!--		</div>-->
-<!--					<div class="titol-bottom">					-->
-<!--				    	   <tal:block tal:repeat="obj nots">							-->
-<!--								<div class="llista">-->
-<!--						  			<a href="#"-->
-<!--						  				tal:attributes="href obj/getURL;-->
-<!--						                  	            title obj/Description">-->
-<!--						                <span>[</span>-->
-<!--						                <span><tal:block define="t obj/getFechaincidencia;-->
-<!--                           					var python:str(t).split(' ',1)"-->
-<!--                           					content="python:var[0]"/>    </span>-->
-<!--						                <span>]</span>-->
-<!--						            	<span tal:replace="obj/pretty_title_or_id"></span>						             						            	-->
-<!--						   			</a>      -->
-<!--							    </div>-->
-<!--						    </tal:block>						-->
-<!--					</div>-->
+<!--   	  Notificaciones -->
+
+   	<A name="notificaciones"><H1></H1></A>
+
+	<div class="notificaciones" tal:condition="nots">
+		<div class="titolfaq">
+					  <span>Notificacions</span>
+		</div>
+					<div class="titol-bottom">					
+				    	   <tal:block tal:repeat="obj nots">							
+								<div class="llista">
+						  			<a href="#"
+						  				tal:attributes="href obj/getURL;
+						                  	            title obj/Description">
+						                <span>[</span>
+						                <span><tal:block define="t obj/getFechaincidencia;
+                           					var python:str(t).split(' ',1)"
+                           					content="python:var[0]"/>    </span>
+						                <span>]</span>
+						            	<span tal:replace="obj/pretty_title_or_id"></span>						             						            	
+						   			</a>      
+							    </div>
+						    </tal:block>						
+					</div>
 <!--			 Enlace a la visualizacion de la carpeta notificacions -->
-<!--			<br><a tal:attributes="href string:${portal_url}/notificacions">Veure les notificacions de tots els serveis</a>-->
-<!--	 </div>-->
+			<br><a tal:attributes="href string:${portal_url}/notificacions">Veure les notificacions de tots els serveis</a>
+	 </div>
 
 	
 	

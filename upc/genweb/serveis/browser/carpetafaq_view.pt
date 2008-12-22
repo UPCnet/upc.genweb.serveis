@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+           tal:define="text python: here.CookedBody(stx_level=2)">
+
+        <div metal:use-macro="here/document_actions/macros/document_actions">
+            Document actions (print, sendto etc)
+        </div>
+
+        <h1 tal:content="here/pretty_title_or_id" class="documentFirstHeading">
+          Title or id
+        </h1>
+        
+        <div class="separadorH2">&nbsp;</div>
+
+<!--        <div metal:use-macro="here/document_byline/macros/byline">-->
+<!--          Get the byline - contains details about author and modification date.-->
+<!--        </div>-->
+		<!-- Descripcion oculta 
+        <p class="documentDescription"
+           tal:content="here/Description"
+           tal:condition="here/Description">
+            Description
+        </p>
+        
+        <p tal:condition="python: not text and is_editable"
+           i18n:translate="no_body_text"
+           class="discreet">
+            This item does not have any body text, click the edit tab to change it.
+        </p>
+    
+        <div class="stx"
+             tal:condition="text"
+             tal:attributes="class python:test(here.Format() in ('text/structured',
+                                                   'text/x-rst', ), 'stx', 'plain')">
+            <div tal:replace="structure text" />
+        </div>
+
+-->
+<tal:llistaserveis tal:define="serveis python:here.muestra_serv()">	
+	<tal:block tal:repeat="servei serveis">
+
+      <tal:faqs tal:define="faqs python:here.enlacefaqv1(servei.getId)" tal:condition="faqs">
+			<div style="color: #F58C01; font-weight: bold; ; font-size: 12px">
+				<div tal:replace="servei/pretty_title_or_id"></div><br>
+			</div>
+          	<div class="llistafaqs">
+             <ul>
+			  <tal:block tal:repeat="faq faqs">
+					<li>
+					 <a href="#"	tal:attributes="href faq/getURL;title faq/Description">
+						<span tal:replace="faq/pretty_title_or_id"></span><br>
+					 </a>
+					</li>
+					 <!--      
+					 <div class="data">
+					    <tal:date content="python:here.toLocalizedTime(obj.start)">
+					    </tal:date>
+					 </div>
+				-->
+             
+		     </tal:block>
+		     </ul>
+		     </div>
+		</tal:faqs>
+			
+	</tal:block>
+</tal:llistaserveis>
+<!--	<div class="separadorH2">&nbsp;</div>-->
+
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>
