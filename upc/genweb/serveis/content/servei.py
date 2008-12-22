@@ -109,6 +109,46 @@ class Servei(OrderedBaseFolder, ATFolder, ATDocument):
                 if i==j.Title:
                     obj.append(j)
         return obj
+
+    def arregloobj(self,lista):
+        tmp=lista
+        new_list=[]
+        portal_catalog = getToolByName(self, 'portal_catalog')
+        mt = portal_catalog.searchResults(portal_type = 'Servei')       
+        for i in tmp:
+            for j in mt:
+                if i==j.Title:
+                    new_list.append(j)
+        return new_list
+    ### VERSION FINAL
+    def enlacefaq(self):
+        var = self.getId()
+        lista=[]
+        obj=[] 
+        portal_catalog = getToolByName(self, 'portal_catalog')          
+        lista_faqs = portal_catalog.searchResults(portal_type = 'ServeiFaq',sort_order = 'Title',review_state='published')              
+        for i in lista_faqs:
+            lista = i.getListaservei2
+            lista1 = self.arregloobj(lista)                     
+            for ii in lista1:
+                if ii.getId==var:
+                    obj.append(i)
+        return obj
+    
+    
+    def enlacenot(self):
+        var = self.getId()
+        portal_catalog = getToolByName(self, 'portal_catalog')          
+        lista_not = portal_catalog.searchResults(portal_type = 'Notificacions',sort_order = 'Title',review_state='published')       
+        lista=[]
+        obj=[]        
+        for i in lista_not:
+            lista = i.getListaservei3
+            lista1 = self.arregloobj(lista)                    
+            for ii in lista1:
+                if ii.getId==var:
+                    obj.append(i)
+        return obj
     
 registerType(Servei, PROJECTNAME)
 

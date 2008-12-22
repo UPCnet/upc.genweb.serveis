@@ -14,7 +14,9 @@
     <tal:main-macro metal:define-macro="main"
            tal:define="text python: here.CookedBody(stx_level=2);
            			   pURL python:context.portal_url();
-           			   servs python:here.enlace()">
+     				   faqs python:here.enlacefaq();
+                       nots python:here.enlacenot();
+                       servs python:here.enlace()">
 
         <div metal:use-macro="here/document_actions/macros/document_actions">
             Document actions (print, sendto etc)
@@ -35,6 +37,31 @@
         </p>
         
        <div id="separador_n3">&nbsp;</div>
+       
+        <!-- Enlaces en la parte superior derecha del content type -->
+
+       <div class="enlaces">
+          <ul>
+              <tal:areas repeat="area here/getAvailableAreas|nothing">
+              <tal:last tal:define="is_last repeat/area/end">
+                <li tal:define="areaTitle       area/title;
+                                areaUrl			area/url;"> 
+                <a tal:attributes="href string:${areaUrl};
+                                   title areaTitle" target="_blank"
+                   tal:content="areaTitle" />
+                   <span tal:condition="python:not is_last or faqs or nots or servs"> |</span>
+                    <!-- | --> <!-- <span tal:condition="not: is_last">|</span>-->
+                   
+                </li>
+              </tal:last>
+              </tal:areas>
+              <span tal:condition="faqs"><a href="#faqs">FAQ</a><span tal:condition="python:nots or servs"> |</span></span>
+              <span tal:condition="nots"><a href="#notificaciones">Notificacions</a><span tal:condition="servs"> |</span></span>
+          	  <span tal:condition="servs"><a href="#servicios_rel">Serveis relacionats</a></span>
+              
+          </ul>
+      	</div>
+     	<br/><br/>
 
         <p tal:condition="python: not text and is_editable"
            i18n:translate="no_body_text"
@@ -44,8 +71,7 @@
     
         <div class="stx"
              tal:condition="text"
-             tal:attributes="class python: view.test(here.Format() in ('text/structured',
-                                                   'text/x-rst', ), 'stx', 'plain')">
+             tal:attributes="class python: here.Format() in ('text/structured', 'text/x-rst', ) and 'stx' or 'plain'">
             <div tal:replace="structure text" />
         </div>
 
