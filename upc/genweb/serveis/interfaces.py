@@ -20,4 +20,8 @@ class ICarpeta(Interface):
 
 class IServeiFaq(Interface):  
     """
+    """
+    
+class ICarpetafaq(Interface):  
+    """
     """    

@@ -46,6 +46,18 @@
             set_schema="..interfaces.IServeiFaq"
             />
     </class>   
+
+     <class class=".carpetafaq.Carpetafaq">
+        <require
+            permission="zope2.View"
+            interface="..interfaces.ICarpetafaq"
+            />
+        <require
+            permission="cmf.ModifyPortalContent"
+            set_schema="..interfaces.ICarpetafaq"
+            />
+    </class>   
+    
 </configure>
 
 

@@ -23,4 +23,8 @@
    <factorytypes>
     <type portal_type="ServeiFaq"/>
   </factorytypes> 
+
+   <factorytypes>
+    <type portal_type="Carpetafaq"/>
+  </factorytypes> 
 </object>

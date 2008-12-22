@@ -89,5 +89,20 @@
         action="@@view"
         description="Default representation of ServeiFaq."
         /> 
+
+    <browser:page
+        for="..interfaces.ICarpetafaq"
+        name="view"
+        class=".carpetafaq.CarpetafaqView"
+        permission="zope2.View"
+        />
+
+    <browser:menuItem
+        for="..interfaces.ICarpetafaq"
+        menu="plone_displayviews"
+        title="ICarpetafaq view"
+        action="@@view"
+        description="Default representation of ICarpetafaq."
+        /> 
         
 </configure>

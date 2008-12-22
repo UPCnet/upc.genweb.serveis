@@ -3,11 +3,10 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from Products.CMFCore.utils import getToolByName
-from upc.genweb.serveis.interfaces import IServei
-
+from upc.genweb.serveis.interfaces import ICarpetafaq
 from plone.memoize.instance import memoize
 
-class ServeiView(BrowserView):
+class CarpetafaqView(BrowserView):
     """Default view of a fitxa
     """
 
@@ -16,4 +15,4 @@ class ServeiView(BrowserView):
     # of this class. The variable 'context' will refer to the cinema folder
     # being rendered.
 
-    __call__ = ViewPageTemplateFile('servei.pt')
+    __call__ = ViewPageTemplateFile('carpetafaq_view.pt')

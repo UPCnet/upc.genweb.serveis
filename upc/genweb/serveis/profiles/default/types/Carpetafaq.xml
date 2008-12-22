@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
-<object name="Carpeta"
+<object name="Carpetafaq"
    meta_type="Factory-based Type Information with dynamic views"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
- <property name="title">Notificacions Contenidor</property>
+ <property name="title">Faqs Contenidor</property>
  <property name="description"></property>
- <property name="content_icon">++resource++Ico_Notificacio.png</property>
- <property name="content_meta_type">Carpeta</property>
+ <property name="content_icon">++resource++Ico_FAQ.png</property>
+ <property name="content_meta_type">Carpetafaq</property>
  <property name="product">upc.genweb.serveis</property>
- <property name="factory">addCarpeta</property>
+ <property name="factory">addCarpetafaq</property>
  <property name="immediate_view">base_view</property>
  <property name="global_allow">True</property>
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types">
-  <element value="Notificacions"/>
+  <element value="ServeiFaq"/>
  </property>
  <property name="allow_discussion">False</property>
  <property name="default_view">view</property>
