@@ -8,9 +8,7 @@
     <tal:main-macro metal:define-macro="main"
            tal:define="text python: here.CookedBody(stx_level=2)">
 
-        <div metal:use-macro="here/document_actions/macros/document_actions">
-            Document actions (print, sendto etc)
-        </div>
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
 
         <h1 tal:content="here/pretty_title_or_id" class="documentFirstHeading">
           Title or id
