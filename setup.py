@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.1'
+version = '1.0'
 
 setup(name='upc.genweb.serveis',
       version=version,
@@ -14,9 +14,9 @@ setup(name='upc.genweb.serveis',
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='',
-      author='',
-      author_email='',
-      url='',
+      author='Plone Team @ UPCnet',
+      author_email='plone.team@upcnet.es',
+      url='http://devel.upcnet.es/svn/genwebupc/trunk/upc.genweb.serveis/',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['upc', 'upc.genweb'],
