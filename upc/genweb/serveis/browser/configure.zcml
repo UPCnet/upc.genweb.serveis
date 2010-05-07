@@ -103,6 +103,6 @@
         title="ICarpetafaq view"
         action="@@view"
         description="Default representation of ICarpetafaq."
-        /> 
-        
+        />       
+    
 </configure>
