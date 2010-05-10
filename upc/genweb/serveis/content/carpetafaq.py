@@ -40,6 +40,30 @@ class Carpetafaq(OrderedBaseFolder, ATFolder, ATDocument):
 
     schema = Carpetaschf
 
+    def serveis_ordenats(self):
+        #import time
+        #aux = time.time()
+        portal_catalog = getToolByName(self, 'portal_catalog')
+        lista_faqs = portal_catalog.searchResults(portal_type = 'ServeiFaq',sort_order = 'sortable_title',review_state='published')
+        dic_faqs = {}
+        for faq in lista_faqs:
+          serveis_faq = faq.getListaservei2
+          for servei in serveis_faq:
+            if dic_faqs.has_key(servei):
+              dic_faqs[servei].append(faq)
+            else:
+              dic_faqs[servei] = [faq]
+        #return time.time() - aux #0.00395894050598 s
+
+        claus = sorted(dic_faqs, key=str.lower)
+        resultat = []
+        for c in claus:
+            entrada = [c, dic_faqs[c]]
+            resultat.append(entrada)
+        #return time.time() - aux #0.00398802757263 s
+        return resultat
+
+
     def muestra_serv(self):
         portal_catalog = getToolByName(self, 'portal_catalog')
         mt = portal_catalog.searchResults(portal_type = 'Servei',sort_on='sortable_title',review_state='published')
@@ -55,6 +79,7 @@ class Carpetafaq(OrderedBaseFolder, ATFolder, ATDocument):
                 if i==j.Title:
                     new_list.append(j)
         return new_list
+
     ### VERSION FINAL
     def enlacefaqv1(self,var):
         lista=[]
@@ -63,7 +88,7 @@ class Carpetafaq(OrderedBaseFolder, ATFolder, ATDocument):
         lista_faqs = portal_catalog.searchResults(portal_type = 'ServeiFaq',sort_order = 'sortable_title',review_state='published')              
         for i in lista_faqs:
             lista = i.getListaservei2
-            lista1 = self.arregloobj(lista)                     
+            lista1 = self.arregloobj(lista)
             for ii in lista1:
                 if ii.getId==var:
                     obj.append(i)
