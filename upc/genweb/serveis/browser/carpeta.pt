@@ -8,19 +8,11 @@
     <tal:main-macro metal:define-macro="main"
            tal:define="text python: here.CookedBody(stx_level=2)">
 
-        <div metal:use-macro="here/document_actions/macros/document_actions">
-            Document actions (print, sendto etc)
-        </div>
+    	<div tal:replace="structure provider:plone.abovecontenttitle" />
 
-        <h1 tal:content="here/pretty_title_or_id" class="documentFirstHeading">
-          Title or id
-        </h1>
+        <h1 tal:content="here/pretty_title_or_id" class="documentFirstHeading">Title or id</h1>
         
         <div class="separadorH2">&nbsp;</div>
-
-<!--        <div metal:use-macro="here/document_byline/macros/byline">-->
-<!--          Get the byline - contains details about author and modification date.-->
-<!--        </div>-->
 
 			<tal:block tal:repeat="obj python:here.muestranotif()">
 				<div style="font-size: 11px; border: none; background: url(quadretGris.gif) no-repeat top left;
