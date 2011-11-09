@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
 """Definition of the SERVEI3.0 content type.
 """
-__author__ = """José Luis Vivanco C <jose.luis.vivanco@upcnet.es>"""
+__author__ = """Jose Luis Vivanco C <jose.luis.vivanco@upcnet.es>"""
 __docformat__ = 'plaintext'
 
 from zope.interface import implements
