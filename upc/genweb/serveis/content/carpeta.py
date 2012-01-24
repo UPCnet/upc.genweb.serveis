@@ -16,20 +16,18 @@ from AccessControl import ClassSecurityInfo
 from Products.Archetypes.public import DisplayList
 from Products.Archetypes.public import *
 
-from Products.ATContentTypes.content.document import ATDocument
 from Products.ATContentTypes.content.folder import ATFolder
 
 from upc.genweb.serveis.interfaces import ICarpeta
 from upc.genweb.serveis.config import PROJECTNAME
 
-Carpetasch = getattr(ATFolder, 'schema', Schema(())).copy() + \
-    getattr(ATDocument, 'schema', Schema(())).copy()
+Carpetasch = getattr(ATFolder, 'schema', Schema(())).copy()
 
 Carpetasch['description'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
 Carpetasch['relatedItems'].widget.visible = {'edit': 'invisible', 'view': 'invisible'}
 
 
-class Carpeta(OrderedBaseFolder, ATFolder, ATDocument):
+class Carpeta(ATFolder):
     """
     Documento para describir un servicio
     """
@@ -44,7 +42,7 @@ class Carpeta(OrderedBaseFolder, ATFolder, ATDocument):
 
     def muestranotif(self):
         portal_catalog = getToolByName(self, 'portal_catalog')
-        mt = portal_catalog.searchResults(portal_type = 'Notificacions',sort_order='reverse',sort_on='getFechaincidencia',review_state='published')
+        mt = portal_catalog.searchResults(portal_type='Notificacions', sort_order='reverse', sort_on='getFechaincidencia', review_state='published')
         return mt
-        
+
 registerType(Carpeta, PROJECTNAME)
