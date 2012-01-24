@@ -2,37 +2,37 @@
       lang="en"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="plone">
-<body>
+    <body>
 
-<metal:main fill-slot="main">
-    <tal:main-macro metal:define-macro="main"
-           tal:define="text python: here.CookedBody(stx_level=2)">
+    <metal:main fill-slot="main">
+        <tal:main-macro metal:define-macro="main">
 
-    	<div tal:replace="structure provider:plone.abovecontenttitle" />
 
-        <h1 tal:content="here/pretty_title_or_id" class="documentFirstHeading">Title or id</h1>
-        
-        <div class="separadorH2">&nbsp;</div>
+        <div tal:replace="structure provider:plone.abovecontenttitle"></div>
 
-			<tal:block tal:repeat="obj python:here.muestranotif()">
-				<div style="font-size: 11px; border: none; background: url(quadretGris.gif) no-repeat top left;
-							padding: 0px 0px 0px 15px;margin-top: 7px;line-height: 1.2em;
-							list-style: none; list-style-type: none;list-style-image: none;">
-					<a href="#"	tal:attributes="href obj/getURL;title obj/Description">
-						<span tal:replace="obj/pretty_title_or_id"></span><br>
-					</a>      
-					<div class="data">
-					    <tal:date content="python:here.toLocalizedTime(obj.start)">
-					    </tal:date>
-					</div>    
-				</div>
-			</tal:block>
+            <h1 tal:content="here/pretty_title_or_id" class="documentFirstHeading">Title or id</h1>
+            
+            <div class="separadorH2">&nbsp;</div>
 
-	<div class="separadorH2">&nbsp;</div>
+			    <tal:block tal:repeat="obj python:here.muestranotif()">
+				    <div style="font-size: 11px; border: none; background: url(quadretGris.gif) no-repeat top left;
+							    padding: 0px 0px 0px 15px;margin-top: 7px;line-height: 1.2em;
+							    list-style: none; list-style-type: none;list-style-image: none;">
+					    <a href="#"	tal:attributes="href obj/getURL;title obj/Description">
+						    <span tal:replace="obj/pretty_title_or_id"></span><br>
+					    </a>      
+					    <div class="data">
+					        <tal:date content="python:here.toLocalizedTime(obj.start)">
+					        </tal:date>
+					    </div>    
+				    </div>
+			    </tal:block>
 
-    </tal:main-macro>
-</metal:main>
+	        <div class="separadorH2">&nbsp;</div>
 
-</body>
+        </tal:main-macro>
+    </metal:main>
+
+    </body>
 </html>
 
