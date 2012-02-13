@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.3 (2012-02-13)
+----------------
+* Visibilidad de la carpeta notificacions
+
 1.2 (2011-11-25)
 ----------------
 * GenwebUPC 4 ready.
