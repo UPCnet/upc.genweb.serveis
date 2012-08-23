@@ -8,20 +8,12 @@
             permission="zope2.View"
             interface="..interfaces.IServei"
             />
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.IServei"
-            />
     </class>
 
     <class class=".notificacions.Notificacions">
         <require
             permission="zope2.View"
             interface="..interfaces.INotificacions"
-            />
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.INotificacions"
             />
     </class>
 
@@ -30,10 +22,6 @@
             permission="zope2.View"
             interface="..interfaces.ICarpeta"
             />
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.ICarpeta"
-            />
     </class>
 
      <class class=".serveiFaq.ServeiFaq">
@@ -41,23 +29,15 @@
             permission="zope2.View"
             interface="..interfaces.IServeiFaq"
             />
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.IServeiFaq"
-            />
-    </class>   
+    </class>
 
      <class class=".carpetafaq.Carpetafaq">
         <require
             permission="zope2.View"
             interface="..interfaces.ICarpetafaq"
             />
-        <require
-            permission="cmf.ModifyPortalContent"
-            set_schema="..interfaces.ICarpetafaq"
-            />
-    </class>   
-    
+    </class>
+
 </configure>
 
 
